@@ -10,7 +10,6 @@
     --text-light: #ffffff;
     --border-light: #333333;
     --header-height: 70px;
-
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Lato', Arial, sans-serif;
     --section-padding: 80px 0;
@@ -37,6 +36,8 @@ body {
     background-repeat: repeat;
     display: flex;
     flex-direction: column;
+    /* FIX: Add a subtle white shadow to make ALL body text pop */
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5); 
 }
 
 h1,
@@ -49,6 +50,8 @@ h6 {
     font-weight: 500;
     line-height: 1.2;
     color: var(--text-dark);
+    /* FIX: Add a slightly stronger shadow to headings */
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7); 
 }
 
 .container {
@@ -319,7 +322,8 @@ header .container {
     font-size: 4em;
     font-weight: 700;
     margin-bottom: 18px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    /* This shadow is necessary here to pop over the image */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); 
     color: var(--text-light);
 }
 
@@ -328,7 +332,8 @@ header .container {
     font-family: var(--font-sans);
     font-weight: 300;
     margin-bottom: 40px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    /* This shadow is necessary here to pop over the image */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); 
     color: var(--text-light);
 }
 
@@ -769,6 +774,47 @@ footer p {
     font-size: 1.2em;
 }
 
+/* ======================================= */
+/* 🧩 REMOVED: ABOUT PAGE SPECIFIC STYLES - Reverting to global styles */
+/* ======================================= */
+
+#about-content {
+    /* Reverted to relying on the global body styles and text-shadow fix */
+    padding: var(--section-padding); 
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    text-align: left;
+}
+
+#about-content .container {
+    padding: 0 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#about-content h2 {
+    color: var(--accent-color); 
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#about-content p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+#boxes {
+    padding: 30px 0;
+}
+
+#boxes .container {
+    max-width: 400px;
+    text-align: center;
+}
+
 /* --- Media Queries --- */
 
 @media(max-width: 900px) {
@@ -806,7 +852,6 @@ footer p {
     #branding h1 {
         font-size: 1.5em;
         white-space: nowrap;
-        /* Prevent logo text from wrapping */
     }
 
     #branding {
@@ -845,12 +890,10 @@ footer p {
         top: 80px;
         left: 0;
         width: 100%;
-
         background-color: rgba(30, 30, 30, 0.95);
         background-image: url('../images/dark_noise.png');
         background-repeat: repeat;
         background-blend-mode: multiply;
-
         box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
         padding: 20px 0;
         z-index: 999;
