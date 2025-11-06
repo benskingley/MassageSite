@@ -1,7 +1,7 @@
 :root {
     --primary-color: #00ccb4;
     --primary-dark: #121212;
-    --accent-color: #ff8800;
+    --accent-color: #ffd600;
     --accent-hover: #ffc107;
     --bg-light: #121212;
     --bg-dark: #1e1e1e;
@@ -32,11 +32,11 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--primary-dark);
-
-    background-image: url('../images/dark_noise.png');
-    background-repeat: repeat;
-
+    background-color: var(--primary-dark); 
+    
+    background-image: url('../images/dark_noise.png'); 
+    background-repeat: repeat; 
+    
     display: flex;
     flex-direction: column;
 }
@@ -88,8 +88,8 @@ ul {
 header {
     background-color: var(--bg-dark);
     background-image: url('../images/dark_noise.png');
-    background-repeat: repeat;
-
+    background-repeat: repeat; 
+    
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     position: fixed;
     width: 100%;
@@ -107,7 +107,7 @@ header .container {
 }
 
 #branding {
-    flex-shrink: 1;
+    flex-shrink: 1; 
     flex-basis: auto;
     min-width: 0;
 }
@@ -116,8 +116,8 @@ header .container {
     font-size: 1.8em;
     font-weight: 600;
     color: var(--text-dark);
-    white-space: normal;
-    line-height: 1;
+    white-space: normal; 
+    line-height: 1; 
 }
 
 #branding .highlight {
@@ -129,14 +129,14 @@ header .container {
     display: flex;
     align-items: center;
     gap: 30px;
-    flex-shrink: 1;
+    flex-shrink: 1; 
 }
 
 #nav-links {
     display: flex;
     justify-content: flex-end;
     gap: 40px;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; 
     flex-shrink: 0;
 }
 
@@ -217,7 +217,7 @@ header .container {
 }
 
 .hamburger.is-active {
-    background-color: transparent;
+    background-color: transparent; 
 }
 
 .hamburger.is-active::before {
@@ -238,13 +238,13 @@ header .container {
     max-height: 500px;
     padding-top: 2.5rem;
     justify-content: center;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease; 
     border-radius: 100%;
 }
 
 .about-image:hover {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 15px var(--accent-color));
+    filter: drop-shadow(0 0 15px var(--accent-color)); 
 }
 
 .custom-select {
@@ -364,8 +364,6 @@ header .container {
 
 #about-snippet .container {
     max-width: 800px;
-    background-image: none;
-    background-color: transparent;
 }
 
 #about-snippet h2 {
@@ -388,8 +386,6 @@ header .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    background-image: none;
-    background-color: transparent;
 }
 
 .service-card {
@@ -439,8 +435,6 @@ header .container {
 
 #appointment .container {
     max-width: 900px;
-    background-image: none;
-    background-color: transparent;
 }
 
 #appointment h2 {
@@ -519,8 +513,6 @@ header .container {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    background-image: none;
-    background-color: transparent;
 }
 
 #newsletter h1 {
@@ -804,7 +796,7 @@ footer p {
     }
 }
 
-@media(max-width: 1250px) {
+@media(max-width: 1250px) { 
     header {
         height: var(--header-height);
         padding: 0;
@@ -814,8 +806,29 @@ footer p {
         padding: 0 20px;
     }
 
+    /* 🎯 MOBILE FIXES FOR LOGO AND LANGUAGE SWITCHER */
+    #branding h1 {
+        font-size: 1.5em; /* Shrink logo text */
+    }
+
+    #branding {
+        flex-shrink: 0; 
+        margin-right: 15px; /* Add buffer space */
+    }
+
+    .selected-option {
+        padding: 6px 12px; /* Shrink button padding */
+        font-size: 0.9em; /* Shrink button text */
+    }
+
+    .flag-icon {
+        width: 20px; 
+        height: 13px;
+        margin-right: 6px; 
+    }
+    
     #main-nav {
-        flex-shrink: 0;
+        flex-shrink: 0; 
         display: flex;
         align-items: center;
         gap: 15px;
@@ -823,15 +836,15 @@ footer p {
     }
 
     #nav-links {
-        display: none;
+        display: none; 
         flex-direction: column;
         justify-content: flex-start;
         position: absolute;
         top: var(--header-height);
         left: 0;
         width: 100%;
-
-        background-color: rgba(30, 30, 30, 0.95);
+        
+        background-color: rgba(30, 30, 30, 0.95); 
         background-image: url('../images/dark_noise.png');
         background-repeat: repeat;
         background-blend-mode: multiply;
@@ -846,18 +859,18 @@ footer p {
     }
 
     .menu-toggle {
-        display: block !important;
-        order: 2;
+        display: block !important; 
+        order: 2; 
         flex-shrink: 0;
-        z-index: 1005;
-        margin-left: 10px;
+        z-index: 1005; 
+        margin-left: 10px; 
     }
 
     #lang-switch {
         order: 1;
         margin-right: 0;
         flex-shrink: 0;
-        min-width: 0;
+        min-width: 0; 
     }
 
     #nav-links li {
@@ -881,7 +894,7 @@ footer p {
     #nav-links li a::after {
         display: none;
     }
-
+    
     main {
         padding-top: var(--header-height);
     }
