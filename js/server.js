@@ -37,10 +37,8 @@ app.post('/send-email', (req, res) => {
 
     // 2. Email options
     let mailOptions = {
-        // IMPORTANT FIX: Use GMAIL_USER as the FROM address to satisfy Gmail's security requirements.
         from: process.env.GMAIL_USER, 
         
-        // This is the intended recipient (kciuba62@gmail.com)
         to: process.env.RECIPIENT_EMAIL, 
         
         // Set the customer's email as the REPLY-TO header so you can easily respond.
