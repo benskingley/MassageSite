@@ -1,7 +1,7 @@
 :root {
     --primary-color: #00ccb4;
     --primary-dark: #121212;
-    --accent-color: #ff8800;
+    --accent-color: #ff9100;
     --accent-hover: #ffc107;
     --bg-light: #121212;
     --bg-dark: #1e1e1e;
@@ -33,10 +33,8 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--primary-dark);
-
     background-image: url('../images/dark_noise.png');
     background-repeat: repeat;
-
     display: flex;
     flex-direction: column;
 }
@@ -89,7 +87,6 @@ header {
     background-color: var(--bg-dark);
     background-image: url('../images/dark_noise.png');
     background-repeat: repeat;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     position: fixed;
     width: 100%;
@@ -798,7 +795,7 @@ footer p {
 
 @media(max-width: 1250px) {
     header {
-        height: var(--header-height);
+        height: 80px;
         padding: 0;
     }
 
@@ -808,20 +805,22 @@ footer p {
 
     #branding h1 {
         font-size: 1.5em;
-        /* Shrink logo text */
+        white-space: nowrap;
+        /* Prevent logo text from wrapping */
     }
 
     #branding {
-        flex-shrink: 0;
-        margin-right: 15px;
-        /* Add buffer space */
+        flex-shrink: 1;
+        margin-right: 10px;
+    }
+
+    .custom-select {
+        width: 120px;
     }
 
     .selected-option {
         padding: 6px 12px;
-        /* Shrink button padding */
         font-size: 0.9em;
-        /* Shrink button text */
     }
 
     .flag-icon {
@@ -834,7 +833,7 @@ footer p {
         flex-shrink: 0;
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
         position: static;
     }
 
@@ -843,7 +842,7 @@ footer p {
         flex-direction: column;
         justify-content: flex-start;
         position: absolute;
-        top: var(--header-height);
+        top: 80px;
         left: 0;
         width: 100%;
 
@@ -866,7 +865,7 @@ footer p {
         order: 2;
         flex-shrink: 0;
         z-index: 1005;
-        margin-left: 10px;
+        margin-left: 0;
     }
 
     #lang-switch {
@@ -899,7 +898,7 @@ footer p {
     }
 
     main {
-        padding-top: var(--header-height);
+        padding-top: 80px;
     }
 
     #showcase h1 {
@@ -913,5 +912,12 @@ footer p {
     .multi-widget-view {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+@media(max-width: 840px) {
+    #branding h1 {
+        font-size: 0.8em;
+        /* Shrink logo for very small screens */
     }
 }
