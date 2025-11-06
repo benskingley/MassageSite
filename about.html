@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nas | About Us</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Masaż</span> Terapeutyczny</h1>
+            </div>
+            
+            <nav id="main-nav">
+                <ul id="nav-links">
+                    <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+                    <li class="current"><a href="about.html" data-pl="O mnie" data-en="About">O mnie</a></li>
+                    <li><a href="services.html" data-pl="Usługi" data-en="Services">Usługi</a></li>
+                    <li><a href="booking.html" data-pl="Reserwacja" data-en="Booking">Reserwacja</a></li>
+                    <li><a href="#contact" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+                </ul>
+
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="hamburger"></span>
+                </div>
+
+                <div id="lang-switch">
+                    <div class="custom-select">
+                        <div class="selected-option">
+                            <img src="images/pl-flag.png" alt="Polish flag" class="flag-icon">
+                            <span>Polski</span>
+                        </div>
+                        <ul class="options">
+                            <li data-value="pl">
+                                <img src="images/pl-flag.png" alt="Polish flag" class="flag-icon">
+                                <span>Polski</span>
+                            </li>
+                            <li data-value="en">
+                                <img src="images/en-flag.png" alt="English flag" class="flag-icon">
+                                <span>English</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+        <section id="showcase">
+            <div class="container">
+                <h1 data-pl="O" data-en="About">O mnie</h1>
+                <h2 data-pl="Poznaj naszą historię i wartości" data-en="Learn about our history and values">Poznaj naszą historię i wartości</h2>
+            </div>
+        </section>
+    
+    <main id="main-content">
+        <section id="about-content" class="container">
+            <br>
+            <h2 data-pl="O mnie" data-en="About Me">O mnie</h2>
+            <p data-pl="Witaj w moim serwisie masażu terapeutycznego. Jestem oddani dostarczaniu najlepszego doświadczenia masażu, aby pomóc Ci się zrelaksować, odzyskać siły i odnowić. Nasi wykwalifikowani terapeuci są przeszkoleni w różnych technikach, aby dopasować się do Twoich indywidualnych potrzeb."
+                data-en="Welcome to my therapeutic massage service. I am dedicated to providing the best massage experience to help you relax, recover, and rejuvenate. I am trained in various techniques to cater to your individual needs.">
+                Witaj w naszym serwisie masażu terapeutycznego. Jesteśmy oddani dostarczaniu najlepszego doświadczenia masażu, aby pomóc Ci się zrelaksować, odzyskać siły i odnowić. Nasi wykwalifikowani terapeuci są przeszkoleni w różnych technikach, aby dopasować się
+                do Twoich indywidualnych potrzeb.
+            </p>
+        </section>
+
+        <section id="boxes">
+            <div class="container">
+                <div class="box">
+                    <img src="images/kari.jpg" class="about-image" alt="Karolina">
+                    <p data-pl="" data-en="">
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 data-pl="Skontaktuj się z nami" data-en="Contact Us">Skontaktuj się z nami</h2>
+                <div class="contact-wrapper">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-pl="Pełne imię" data-en="Full Name">Pełne imię</label>
+                                <input type="text" id="name" name="from_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-pl="Email" data-en="Email">Email</label>
+                                <input type="email" id="email" name="from_email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-pl="Wiadomość" data-en="Message">Wiadomość</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="button_1" data-pl="Wyślij" data-en="Send">Wyślij</button>
+                        </form>
+                    </div>
+
+                    <!-- Phone Contact Section -->
+                    <div class="phone-contact-container">
+                        <h3 data-pl="Skontaktuj się z nami telefonicznie" data-en="Contact Us by Phone">Skontaktuj się z nami telefonicznie</h3>
+                        <p data-pl="Skontaktuj się z nami pod numerem:" data-en="Feel free to call us at:">Skontaktuj się z nami pod numerem:</p>
+                        <p><a href="tel:+1234567890" class="phone-number" data-pl="+123 456 7890" data-en="+123 456 7890">+123 456 7890</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-pl="Masaż Terapeutyczny, Copyright &copy; 2024" data-en="Therapeutic Massage, Copyright &copy; 2024">Masaż Terapeutyczny, Copyright &copy; 2024</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/scripts.js" defer></script>
+</body>
+
+</html>
