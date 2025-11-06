@@ -356,7 +356,7 @@ header .container {
     text-align: center;
     background-color: var(--bg-light);
     background-image: url('../images/dark_noise.png');
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 }
 
 #about-snippet .container {

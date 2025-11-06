@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('open');
             // Toggle 'is-active' for the hamburger animation (CSS to transform bars)
             if (hamburger) {
-                 hamburger.classList.toggle('is-active');
+                hamburger.classList.toggle('is-active');
             }
         });
         
@@ -90,26 +90,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitButton = contactForm.querySelector('.button_1');
             const originalText = submitButton.textContent;
             
+            // Determine current language for button status messages
+            const currentLang = document.documentElement.lang || 'pl';
+            const sendingText = currentLang === 'en' ? 'Sending...' : 'Wysyłanie...';
+            const successAlert = currentLang === 'en' ? 'Email sent successfully!' : 'Wiadomość została pomyślnie wysłana!';
+            const errorAlert = currentLang === 'en' ? 'Failed to send email. Please try again.' : 'Wysyłanie wiadomości nie powiodło się. Spróbuj ponownie.';
+            const failedText = currentLang === 'en' ? 'Failed!' : 'Błąd!';
+
             // Disable button and show loading state
-            submitButton.textContent = 'Sending...';
+            submitButton.textContent = sendingText;
             submitButton.disabled = true;
 
-            const formData = new FormData(contactForm);
-            const formObject = Object.fromEntries(formData.entries());
-
-            formObject.to_name = 'Massage Service'; // Example recipient name
-
-            emailjs.send('service_bsid2os', 'template_kddkvie', formObject)
+            // Use emailjs.sendForm with the 'this' form reference
+            emailjs.sendForm('service_bsid2os', 'template_kddkvie', this)
                 .then(response => {
-                    alert('Email sent successfully!');
+                    alert(successAlert);
                     contactForm.reset();
+                    // Restore original button text from the stored variable
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
                 })
                 .catch(error => {
-                    alert('Failed to send email. Please try again.');
+                    alert(errorAlert);
                     console.error('EmailJS Error:', error);
-                    submitButton.textContent = 'Failed!';
+                    submitButton.textContent = failedText;
+                    
+                    // Restore original button text after a short delay
                     setTimeout(() => {
                         submitButton.textContent = originalText;
                         submitButton.disabled = false;
@@ -130,11 +136,18 @@ function translatePage(lang) {
     elementsToTranslate.forEach(element => {
         const translation = element.getAttribute(`data-${lang}`);
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            // Check if the element has a placeholder property before setting it
             if (element.placeholder !== undefined) {
                 element.placeholder = translation;
             }
         } else {
+            // Use innerHTML for other elements (like button text or labels)
             element.innerHTML = translation;
+        }
+        
+        // Also update the button text content (for the translation function)
+        if (element.classList.contains('button_1')) {
+            element.textContent = translation;
         }
     });
     document.documentElement.lang = lang;
@@ -167,4 +180,3 @@ function initializeLanguage() {
     // Run the initial translation
     translatePage(savedLanguage);
 }
-

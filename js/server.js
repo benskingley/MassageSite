@@ -25,11 +25,11 @@ app.post('/send-email', (req, res) => {
 
     // 1. Configure the SMTP transporter
     let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com', 
+        host: 'gmail.com', 
         port: 465, 
         secure: true, // Use SSL/TLS
         auth: {
-            // Credentials for the authorized account (benskingley@gmail.com)
+            // Credentials for the authorised account (benskingley@gmail.com)
             user: process.env.GMAIL_USER, 
             pass: process.env.GMAIL_PASS 
         }
