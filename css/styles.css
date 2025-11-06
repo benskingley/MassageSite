@@ -311,7 +311,7 @@ header .container {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-dark);
+    color: var(--text-light);
     padding: 80px 0;
 }
 
@@ -320,7 +320,7 @@ header .container {
     font-weight: 700;
     margin-bottom: 18px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 #showcase h2 {
