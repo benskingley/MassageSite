@@ -918,6 +918,20 @@ footer p {
 @media(max-width: 840px) {
     #branding h1 {
         font-size: 0.8em;
-        /* Shrink logo for very small screens */
+    }
+
+    .custom-select {
+        width: 90px;
+    }
+
+    .selected-option {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+
+    .flag-icon {
+        width: 18px;
+        height: 11px;
+        margin-right: 5px;
     }
 }
